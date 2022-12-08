@@ -21,7 +21,7 @@ wp_head();
 <?php
 if(get_field('body','options')) { the_field('body','options'); }
 // echo '<div class="blank-space"></div>';
-echo '<header class="position-fixed pt-3 pb-3 z-3 w-100" style="top:0;left:0;transition:all .25s ease-in-out;">';
+echo '<header class="position-fixed pt-3 pb-3 w-100" style="top:0;left:0;transition:all .25s ease-in-out;z-index:6;">';
 
 echo '<div class="position-absolute w-100 bg-accent header-background" style="top:0;left:0;transition:all .5s ease-in-out;"></div>';
 
@@ -107,31 +107,76 @@ echo '</div>';
 
 echo '</header>';
 
-echo '<section class="hero position-relative d-flex align-items-center justify-content-center" style="height:100vh;">';
+echo '<section class="hero position-relative d-flex align-items-center justify-content-center overflow-h" style="height:100vh;">';
 
 if(is_front_page()) {
 
-$globalPlaceholderImg = get_field('global_placeholder_image','options');
-if(is_page()){
-if(has_post_thumbnail()){
-the_post_thumbnail('full', array('class' => 'w-100 h-100 bg-img position-absolute'));
-} else {
-echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-100 h-100 bg-img position-absolute']);
-}
-} else {
-echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-100 h-100 bg-img position-absolute']);
-}
+// $globalPlaceholderImg = get_field('global_placeholder_image','options');
+// if(is_page()){
+// if(has_post_thumbnail()){
+// the_post_thumbnail('full', array('class' => 'w-100 h-100 bg-img position-absolute'));
+// } else {
+// echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-100 h-100 bg-img position-absolute']);
+// }
+// } else {
+// echo wp_get_attachment_image($globalPlaceholderImg['id'],'full','',['class'=>'w-100 h-100 bg-img position-absolute']);
+// }
 
-echo '<div class="position-absolute bg-black w-100 h-100" style="opacity:.5;"></div>';
+if(have_rows('header_gallery')): while(have_rows('header_gallery')): the_row();
 
-echo '<div class="pt-5 pb-5 text-white text-center">';
+$gallery = get_sub_field('big_gallery');
+
+if( $gallery ): 
+    echo '<div class="position-absolute w-100 h-100 big-gallery owl-carousel owl-theme overflow-h" style="top:0;left:0;">';
+    foreach( $gallery as $image ):
+        echo '<div class="h-100">';
+        echo wp_get_attachment_image($image['id'], 'full','',['class'=>'w-100 h-100 img-portfolio','style'=>'object-fit:cover;'] );
+        echo '</div>';
+    endforeach; 
+    echo '</div>';
+endif;
+
+endwhile; endif;
+
+echo '<div class="position-absolute bg-black w-100 h-100" style="opacity:.5;z-index:3;"></div>';
+
+if(have_rows('header_gallery')): while(have_rows('header_gallery')): the_row();
+
+$smallGallery = get_sub_field('small_gallery');
+
+if( $smallGallery ): 
+    
+    
+    echo '<div class="position-absolute h-100 small-gallery owl-carousel owl-theme overflow-h" style="top:0;right:0;z-index:4;width:50%;">';
+    foreach( $smallGallery as $image ):
+        echo '<div class="h-100">';
+        echo '<div class="position-absolute h-100 bg-accent" style="top:0;right:0;width:100%;
+        clip-path: polygon(40% 0%, 100% 0, 100% 100%, 0% 100%);
+        -ms-clip-path: polygon(40% 0%, 100% 0, 100% 100%, 0% 100%);
+        -webkit-clip-path: polygon(40% 0%, 100% 0, 100% 100%, 0% 100%);
+        -moz-clip-path: polygon(40% 0%, 100% 0, 100% 100%, 0% 100%);
+        "></div>';
+        echo '<div class="h-100 position-relative" style="clip-path: polygon(42% 0%, 100% 0, 100% 100%, 2% 100%);
+        -ms-clip-path: polygon(42% 0%, 100% 0, 100% 100%, 2% 100%);
+        -webkit-clip-path: polygon(42% 0%, 100% 0, 100% 100%, 2% 100%);
+        -moz-clip-path: polygon(42% 0%, 100% 0, 100% 100%, 2% 100%);">';
+        echo wp_get_attachment_image($image['id'], 'full','',['class'=>'w-100 h-100','style'=>'object-fit:cover;'] );
+        echo '</div>';
+        echo '</div>';
+    endforeach; 
+    echo '</div>';
+endif;
+
+endwhile; endif;
+
+echo '<div class="pt-5 pb-5 text-white text-center position-relative" style="z-index:5;">';
 // echo '<div class="position-relative">';
 // echo '<div class="multiply overlay position-absolute w-100 h-100 bg-img"></div>';
 // echo '<div class="position-relative">';
 echo '<div class="container">';
 echo '<div class="row">';
 echo '<div class="col-12">';
-echo '<h1 class="pt-3 pb-3 mb-0" style="font-size:10vw;">' . get_the_title() . '</h1>';
+echo '<h1 class="pt-3 pb-3 mb-0 text-shadow" style="font-size:10vw;">' . get_the_title() . '</h1>';
 
 if ( have_posts() ) : while ( have_posts() ) : the_post();
 the_content();
