@@ -11,6 +11,8 @@ wp_enqueue_style('hero', get_theme_file_uri('/css/sections/hero.css'));
 wp_enqueue_style('contact', get_theme_file_uri('/css/sections/contact.css'));
 wp_enqueue_style('img', get_theme_file_uri('/css/elements/img.css'));
 
+wp_enqueue_style('animate-min-css', get_theme_file_uri('/css/animate.min.css'));
+
 if(is_front_page()){
 	wp_enqueue_style('home', get_theme_file_uri('/css/sections/home.css'));
 }
@@ -45,6 +47,7 @@ function ocampo_stylesheets_footer() {
 	// owl carousel
 	wp_enqueue_style('owl.carousel.min', get_theme_file_uri('/owl-carousel/owl.carousel.min.css'));
 	wp_enqueue_style('owl.theme.default', get_theme_file_uri('/owl-carousel/owl.theme.default.min.css'));
+	wp_enqueue_style('owl-carousel-css', get_theme_file_uri('/owl-carousel/owl.carousel.css'));
 	wp_enqueue_style('lightbox-css', get_theme_file_uri('/lightbox/lightbox.min.css'));
 	// wp_enqueue_script('font-awesome', '//use.fontawesome.com/fff80caa08.js');
 

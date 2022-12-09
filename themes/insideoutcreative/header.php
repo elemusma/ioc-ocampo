@@ -147,7 +147,7 @@ $smallGallery = get_sub_field('small_gallery');
 if( $smallGallery ): 
     
     
-    echo '<div class="position-absolute h-100 small-gallery owl-carousel owl-theme overflow-h" style="top:0;right:0;z-index:4;width:35%;">';
+    echo '<div class="position-absolute h-100 small-gallery owl-carousel owl-theme overflow-h" style="top:0;right:0;z-index:4;width:35%;background-repeat:no-repeat;background-size:contain;">';
     foreach( $smallGallery as $image ):
         echo '<div class="h-100">';
         echo '<div class="position-absolute h-100 bg-accent" style="top:0;right:0;width:100%;

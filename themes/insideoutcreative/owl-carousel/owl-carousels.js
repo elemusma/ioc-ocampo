@@ -33,20 +33,21 @@ $('.big-gallery').owlCarousel({
     // stagePadding:170,
     autoplay: true,
     autoplayTimeout: 3500,
+    autoplaySpeed: 2000,
     autoplayHoverPause: false,
     animateIn: 'fadeIn',
     animateOut: 'fadeOut',
     // navText : ["<img src='/wp-content/uploads/2021/07/Arrow-Left-Blair-ITC.png' />","<img src='/wp-content/uploads/2021/07/Arrow-Right-Blair-ITC.png' />"],
-    items: 1
+    items: 1,
     // responsive: {
     //     0: {
-    //         items: 2
+    //         items: 1
     //     },
     //     600: {
-    //         items: 3
+    //         items: 1
     //     },
     //     1000: {
-    //         items: 4
+    //         items: 1
     //     }
     // }
 });
@@ -60,20 +61,21 @@ $('.small-gallery').owlCarousel({
     // stagePadding:170,
     autoplay: true,
     autoplayTimeout: 3500,
+    autoplaySpeed: 3000,
     autoplayHoverPause: false,
-    // animateIn: 'fadeIn',
-    // animateOut: 'fadeOut',
+    animateOut: 'slideOutRight',
+    animateIn: 'slideInLeft',
     // navText : ["<img src='/wp-content/uploads/2021/07/Arrow-Left-Blair-ITC.png' />","<img src='/wp-content/uploads/2021/07/Arrow-Right-Blair-ITC.png' />"],
-    items: 1
+    items: 1,
     // responsive: {
     //     0: {
-    //         items: 2
+    //         items: 1
     //     },
     //     600: {
-    //         items: 3
+    //         items: 1
     //     },
     //     1000: {
-    //         items: 4
+    //         items: 1
     //     }
     // }
 });
