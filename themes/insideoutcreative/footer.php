@@ -32,7 +32,7 @@ echo '<div class="col-12">';
 
 wp_nav_menu(array(
 'menu' => 'footer',
-'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-center text-white text-uppercase'
+'menu_class'=>'menu d-md-flex flex-wrap list-unstyled justify-content-center text-white text-uppercase'
 ));
 
 echo '</div>';
