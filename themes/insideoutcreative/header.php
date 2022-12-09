@@ -150,13 +150,13 @@ if( $smallGallery ):
     echo '<div class="position-absolute h-100 small-gallery owl-carousel owl-theme overflow-h" style="top:0;right:0;z-index:4;width:35%;background-repeat:no-repeat;background-size:contain;">';
     foreach( $smallGallery as $image ):
         echo '<div class="h-100">';
-        echo '<div class="position-absolute h-100 bg-accent" style="top:0;right:0;width:100%;
+        echo '<div class="position-absolute h-100 bg-accent clip-path-bg" style="top:0;right:0;width:100%;
         clip-path: polygon(75% 0%, 100% 0, 100% 100%, 0% 100%);
         -ms-clip-path: polygon(75% 0%, 100% 0, 100% 100%, 0% 100%);
         -webkit-clip-path: polygon(75% 0%, 100% 0, 100% 100%, 0% 100%);
         -moz-clip-path: polygon(75% 0%, 100% 0, 100% 100%, 0% 100%);
         "></div>';
-        echo '<div class="h-100 position-relative" style="
+        echo '<div class="h-100 position-relative clip-path-img" style="
         clip-path: polygon(77% 0%, 100% 0, 100% 100%, 2% 100%);
         -ms-clip-path: polygon(77% 0%, 100% 0, 100% 100%, 2% 100%);
         -webkit-clip-path: polygon(77% 0%, 100% 0, 100% 100%, 2% 100%);

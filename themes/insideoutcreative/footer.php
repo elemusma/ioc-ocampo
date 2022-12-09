@@ -4,7 +4,7 @@ echo '<footer class="">';
 echo '<section class="pt-5 pb-5">';
 echo '<div class="container">';
 echo '<div class="row justify-content-center">';
-echo '<div class="col-lg-2 col-6 text-center pb-5">';
+echo '<div class="col-lg-2 col-md-3 col-5 text-center pb-5">';
 echo '<a href="' . home_url() . '">';
 
 $logo = get_field('logo','options'); 

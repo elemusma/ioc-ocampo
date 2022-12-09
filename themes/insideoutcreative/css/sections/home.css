@@ -20,4 +20,18 @@
     .small-gallery {
         width: 100% !important;
     }
+
+    .clip-path-bg {
+        clip-path: polygon(115% 0%, 100% 0, 100% 100%, 40% 100%) !important;
+        -ms-clip-path: polygon(115% 0%, 100% 0, 100% 100%, 40% 100%) !important;
+        -webkit-clip-path: polygon(115% 0%, 100% 0, 100% 100%, 40% 100%) !important;
+        -moz-clip-path: polygon(115% 0%, 100% 0, 100% 100%, 40% 100%) !important;
+    }
+
+    .clip-path-img {
+        clip-path: polygon(117% 0%, 100% 0, 100% 100%, 42% 100%) !important;
+        -ms-clip-path: polygon(117% 0%, 100% 0, 100% 100%, 42% 100%) !important;
+        -webkit-clip-path: polygon(117% 0%, 100% 0, 100% 100%, 42% 100%) !important;
+        -moz-clip-path: polygon(117% 0%, 100% 0, 100% 100%, 42% 100%) !important;
+    }
 }
