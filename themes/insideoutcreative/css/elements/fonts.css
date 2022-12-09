@@ -61,20 +61,21 @@ a.text-black:hover {
 
 html,
 body {
-  font-family: "proxima_novaregular";
+  font-family: raleway, sans-serif;
+  font-weight: 400;
 }
 
 .light {
-  font-family: "proxima_nova_altlight";
+  font-weight: 300;
 }
 
-.thin {
+/* .thin {
   font-family: "proxima_novathin";
-}
+} */
 
 .bold,
 strong {
-  font-family: "proxima_novabold";
+  font-weight: 700;
 }
 
 blockquote {
@@ -92,7 +93,30 @@ h1,
   font-weight: 400;
 }
 
-/* Cormorant Garamond Regular
+/* 
+Cormorant Garamond Regular
 font-family: cormorant-garamond, serif;
 font-weight: 400;
-font-style: normal; */
+font-style: normal; 
+
+Raleway Bold
+font-family: raleway, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Raleway Regular
+font-family: raleway, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Raleway Italic
+font-family: raleway, sans-serif;
+font-weight: 400;
+font-style: italic;
+
+Raleway Bold Italic
+font-family: raleway, sans-serif;
+font-weight: 700;
+font-style: italic;
+
+*/

@@ -64,9 +64,9 @@ echo '</div>';
 echo '<div class="col-lg-10 col-md-9 col-8 desktop-hidden">';
 echo '<a id="navToggle" class="nav-toggle">';
 echo '<div>';
-echo '<div class="line-1 bg-accent"></div>';
-echo '<div class="line-2 bg-accent"></div>';
-echo '<div class="line-3 bg-accent"></div>';
+echo '<div class="line-1 bg-white"></div>';
+echo '<div class="line-2 bg-white"></div>';
+echo '<div class="line-3 bg-white"></div>';
 echo '</div>';
 echo '</a>';
 echo '</div>';
@@ -130,7 +130,7 @@ if( $gallery ):
     echo '<div class="position-absolute w-100 h-100 big-gallery owl-carousel owl-theme overflow-h" style="top:0;left:0;">';
     foreach( $gallery as $image ):
         echo '<div class="h-100">';
-        echo wp_get_attachment_image($image['id'], 'full','',['class'=>'w-100 h-100 img-portfolio','style'=>'object-fit:cover;'] );
+        echo wp_get_attachment_image($image['id'], 'full','',['class'=>'w-100 h-100 big-gallery-img','style'=>'object-fit:cover;'] );
         echo '</div>';
     endforeach; 
     echo '</div>';
@@ -147,20 +147,21 @@ $smallGallery = get_sub_field('small_gallery');
 if( $smallGallery ): 
     
     
-    echo '<div class="position-absolute h-100 small-gallery owl-carousel owl-theme overflow-h" style="top:0;right:0;z-index:4;width:50%;">';
+    echo '<div class="position-absolute h-100 small-gallery owl-carousel owl-theme overflow-h" style="top:0;right:0;z-index:4;width:35%;">';
     foreach( $smallGallery as $image ):
         echo '<div class="h-100">';
         echo '<div class="position-absolute h-100 bg-accent" style="top:0;right:0;width:100%;
-        clip-path: polygon(40% 0%, 100% 0, 100% 100%, 0% 100%);
-        -ms-clip-path: polygon(40% 0%, 100% 0, 100% 100%, 0% 100%);
-        -webkit-clip-path: polygon(40% 0%, 100% 0, 100% 100%, 0% 100%);
-        -moz-clip-path: polygon(40% 0%, 100% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(75% 0%, 100% 0, 100% 100%, 0% 100%);
+        -ms-clip-path: polygon(75% 0%, 100% 0, 100% 100%, 0% 100%);
+        -webkit-clip-path: polygon(75% 0%, 100% 0, 100% 100%, 0% 100%);
+        -moz-clip-path: polygon(75% 0%, 100% 0, 100% 100%, 0% 100%);
         "></div>';
-        echo '<div class="h-100 position-relative" style="clip-path: polygon(42% 0%, 100% 0, 100% 100%, 2% 100%);
-        -ms-clip-path: polygon(42% 0%, 100% 0, 100% 100%, 2% 100%);
-        -webkit-clip-path: polygon(42% 0%, 100% 0, 100% 100%, 2% 100%);
-        -moz-clip-path: polygon(42% 0%, 100% 0, 100% 100%, 2% 100%);">';
-        echo wp_get_attachment_image($image['id'], 'full','',['class'=>'w-100 h-100','style'=>'object-fit:cover;'] );
+        echo '<div class="h-100 position-relative" style="
+        clip-path: polygon(77% 0%, 100% 0, 100% 100%, 2% 100%);
+        -ms-clip-path: polygon(77% 0%, 100% 0, 100% 100%, 2% 100%);
+        -webkit-clip-path: polygon(77% 0%, 100% 0, 100% 100%, 2% 100%);
+        -moz-clip-path: polygon(77% 0%, 100% 0, 100% 100%, 2% 100%);">';
+        echo wp_get_attachment_image($image['id'], 'full','',['class'=>'w-100 h-100 small-gallery-img','style'=>'object-fit:cover;'] );
         echo '</div>';
         echo '</div>';
     endforeach; 
@@ -169,13 +170,13 @@ endif;
 
 endwhile; endif;
 
-echo '<div class="pt-5 pb-5 text-white text-center position-relative" style="z-index:5;">';
+echo '<div class="pt-5 pb-5 text-white text-lg-center position-relative" style="z-index:5;">';
 // echo '<div class="position-relative">';
 // echo '<div class="multiply overlay position-absolute w-100 h-100 bg-img"></div>';
 // echo '<div class="position-relative">';
 echo '<div class="container">';
 echo '<div class="row">';
-echo '<div class="col-12">';
+echo '<div class="col-lg-12 col-6">';
 echo '<h1 class="pt-3 pb-3 mb-0 text-shadow" style="font-size:10vw;">' . get_the_title() . '</h1>';
 
 if ( have_posts() ) : while ( have_posts() ) : the_post();
