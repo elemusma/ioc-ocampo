@@ -35,3 +35,24 @@
         -moz-clip-path: polygon(117% 0%, 100% 0, 100% 100%, 42% 100%) !important;
     }
 }
+
+/* start of text columns */
+@media only screen and (max-width:991px) {
+    .text-columns-big-title {
+        top: 40px !important;
+        transform: translate(-60%, -70px) !important;
+    }
+}
+
+/* end of text columns */
+
+/* start of icons */
+.border-hover {
+    transition: all .25s ease-in-out;
+}
+
+.border-hover:hover {
+    background: var(--accent-primary);
+}
+
+/* end of icons */

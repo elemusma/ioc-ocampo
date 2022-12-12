@@ -187,60 +187,10 @@ function btn_shortcode( $atts, $content = null ) {
 	
 	// return '<a class="btn-accent-primary" href="' . esc_attr($a['href']) . '" target="' . esc_attr($a['target']) . '">' . $content . '</a>';
 	
-	return '<a class="' . esc_attr($a['class']) . '" href="' . esc_attr($a['href']) . '" style="' . esc_attr($a['style']) . '" target="' . esc_attr($a['target']) . '">' . $content . '</a>';
+	return '<a class="btn-outline ' . esc_attr($a['class']) . '" href="' . esc_attr($a['href']) . '" style="' . esc_attr($a['style']) . '" target="' . esc_attr($a['target']) . '">' . $content . '</a>';
 	
 	// [button href="#" class="btn btn-lg btn-default" style="font-weight:bold; margin-top:50px; background-color: #999"]Learn More[/button]
 	
 	}
 	
 	add_shortcode( 'button', 'btn_shortcode' );
-
-// ENABLE WOOCOMMERCE
-// add_action('after_setup_theme',function() {
-//     add_theme_support('woocommerce');
-// });
-// add_theme_support('wc-product-gallery-zoom');
-// add_theme_support('wc-product-gallery-lightbox');
-// add_theme_support('wc-product-gallery-slider');
-
-
-// WOOCOMMERCE CONTENT WITH NO SIDEBAR
-// add_action('woocommerce_before_main_content','add_container_class',9);
-// function add_container_class(){
-// echo '<div class="container pt-5 pb-5">';
-// echo '<div class="row justify-content-center">';
-// echo '<div class="col-md-12">';
-// }
-
-// add_action('woocommerce_after_main_content','close_container_class',9);
-// function close_container_class(){
-// echo '</div>';
-// echo '</div>';
-// echo '</div>';
-// }
-
-// removes sidebar
-// remove_action('woocommerce_sidebar','woocommerce_get_sidebar');
-
-
-
-// WOOCOMMERCE CONTENT WITH CUSTOM SIDEBAR
-// add_action('woocommerce_before_main_content','add_container_class',9);
-// function add_container_class(){
-// echo '<div class="container pt-5 pb-5" style="">';
-// echo '<div class="row">';
-
-// echo get_template_part('partials/sidebar');
-
-// echo '<div class="col-md-9 order-1 order-md-2">';
-// }
-
-// add_action('woocommerce_after_main_content','close_container_class',9);
-// function close_container_class(){
-// echo '</div>';
-// echo '</div>';
-// echo '</div>';
-// }
-
-// removes sidebar
-// remove_action('woocommerce_sidebar','woocommerce_get_sidebar');

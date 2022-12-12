@@ -28,6 +28,7 @@ a.btn-outline {
     border: 2px solid;
     border-style: double;
     padding: 10px 35px !important;
+    display: inline-block;
     transition: all .25s ease-in-out;
 }
 
@@ -36,4 +37,10 @@ a.btn-outline:hover {
     background: var(--accent-primary);
     /* color: black !important; */
     text-decoration: none;
+    color: white;
+}
+
+.text-white a.btn-outline:hover {
+    background: white;
+    color: var(--accent-primary);
 }

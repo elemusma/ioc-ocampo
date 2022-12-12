@@ -1,5 +1,7 @@
 <?php get_header();
 
+echo get_template_part('partials/content');
+
 // start of intro
 // echo '<section class="pt-5 pb-5 position-relative">';
 // echo '<div class="container">';
