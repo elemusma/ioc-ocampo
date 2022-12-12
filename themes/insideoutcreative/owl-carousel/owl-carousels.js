@@ -79,3 +79,20 @@ $('.small-gallery').owlCarousel({
     //     }
     // }
 });
+$('.testimonial-carousel').owlCarousel({
+    // center: true,
+    // rtl: true,
+    loop: true,
+    margin: 0,
+    nav: true,
+    dots: false,
+    // stagePadding:170,
+    autoplay: false,
+    autoplayTimeout: 3500,
+    autoplaySpeed: 5000,
+    autoplayHoverPause: false,
+    // animateOut: 'slideOutRight',
+    // animateIn: 'slideInLeft',
+    navText: ["<img src='https://insideoutcreative.io/wp-content/uploads/2022/12/Arrow-Circle-Left.png' />", "<img src='https://insideoutcreative.io/wp-content/uploads/2022/12/Arrow-Circle-Right.png' />"],
+    items: 1,
+});

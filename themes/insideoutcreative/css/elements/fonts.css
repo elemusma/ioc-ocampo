@@ -89,7 +89,8 @@ blockquote {
 h1,
 .h1,
 h2,
-.h2 .cormorant {
+.h2,
+.cormorant {
   font-family: cormorant-garamond, serif;
   font-weight: 400;
 }
@@ -97,6 +98,14 @@ h2,
 h2,
 .h2 {
   font-size: 50px;
+}
+
+@media only screen and (max-width:767px) {
+
+  h2,
+  .h2 {
+    font-size: 35px;
+  }
 }
 
 /* 
