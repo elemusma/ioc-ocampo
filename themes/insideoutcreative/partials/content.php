@@ -87,17 +87,17 @@ if($layout == 'Content + Image'){
         endif;
 
         if( $link ):
-        // echo '<div class="col-lg-6">';
-        echo '<a href="' . esc_url( $link_url ) . '" target="' . esc_attr( $link_target ) . '" class="col-lg-5 overflow-h pr-0" style="padding:215px 0;clip-path: polygon(0 0, 100% 15%, 100% 85%, 0% 100%);text-decoration:none;">';
+        echo '<div class="col-lg-6 pl-0">';
+        echo '<a href="' . esc_url( $link_url ) . '" target="' . esc_attr( $link_target ) . '" class="d-inline-block w-100 h-100 overflow-h pr-0" style="padding:215px 0;clip-path: polygon(0 0, 100% 15%, 100% 85%, 0% 100%);text-decoration:none;">';
         
         echo '<div class="img-hover h-100 w-100 position-absolute" style="top:0;left:0;">';
         echo wp_get_attachment_image($image,'full','',['class'=>'position-absolute w-100 h-100','style'=>'top:0;left:0;object-fit:cover;']);
         echo '</div>';
         echo '<div class="position-absolute w-100 h-100" style="top:0;left:0;background:#a186be;mix-blend-mode:multiply;pointer-events:none;"></div>';
 
-        echo '<span class="position-relative text-white h1 pl-5 d-inline-block" style="">' . esc_html( $link_title ) . '</span>';
+        echo '<span class="position-relative text-white h1 pl-5 d-inline-block" style="pointer-events:none;">' . esc_html( $link_title ) . '</span>';
         echo '</a>';
-        // echo '</div>';
+        echo '</div>';
         endif;
 
         endwhile; endif;
@@ -112,17 +112,17 @@ if($layout == 'Content + Image'){
         endif;
 
         if( $link ):
-            // echo '<div class="col-lg-6">';
-            echo '<a href="' . esc_url( $link_url ) . '" target="' . esc_attr( $link_target ) . '" class="col-lg-5 overflow-h pl-0" style="padding:215px 0;clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);text-decoration:none;">';
+            echo '<div class="col-lg-6 pr-0">';
+            echo '<a href="' . esc_url( $link_url ) . '" target="' . esc_attr( $link_target ) . '" class="d-inline-block w-100 h-100 overflow-h pl-0" style="padding:215px 0;clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);text-decoration:none;">';
             
             echo '<div class="img-hover h-100 w-100 position-absolute" style="top:0;left:0;">';
             echo wp_get_attachment_image($image['id'],'full','',['class'=>'position-absolute w-100 h-100','style'=>'top:0;left:0;object-fit:cover;']);
             echo '</div>';
             echo '<div class="position-absolute w-100 h-100" style="top:0;left:0;background:#a186be;mix-blend-mode:multiply;pointer-events:none;"></div>';
             
-            echo '<span class="position-relative text-white h1 pl-5 d-inline-block" style="">' . esc_html( $link_title ) . '</span>';
+            echo '<span class="position-relative text-white h1 pl-5 d-inline-block" style="pointer-events:none;">' . esc_html( $link_title ) . '</span>';
             echo '</a>';
-            // echo '</div>';
+            echo '</div>';
         endif;
         endwhile; endif;
 
@@ -274,7 +274,7 @@ if($layout == 'Content + Image'){
 
         echo '<div class="container">';
         echo '<div class="row justify-content-center">';
-        echo '<div class="col-lg-9">';
+        echo '<div class="col-lg-9 text-center">';
         echo '<div class="position-relative p-5">';
         echo wp_get_attachment_image(173,'full','',['class'=>'position-absolute w-100 h-100','style'=>'top:0;left:0;object-fit:cover;']);
 

@@ -40,7 +40,8 @@ a.btn-outline:hover {
     color: white;
 }
 
-.text-white a.btn-outline:hover {
+.text-white a.btn-outline:hover,
+.btn-outline:hover a {
     background: white;
-    color: var(--accent-primary);
+    color: var(--accent-primary) !important;
 }
