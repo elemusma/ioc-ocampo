@@ -3,7 +3,58 @@
     height: 85vh;
     object-fit: cover;
 }
+
 body:not(.home) .img-hero {
     min-height: 200px;
     height: 30vh;
+}
+
+.small-gallery .owl-stage-outer {
+    width: 35%;
+}
+
+.owl-item.active .big-gallery-img {
+    animation: bigGalleryImgZoom 10s ease;
+}
+
+@keyframes bigGalleryImgZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+@media only screen and (max-width:991px) {
+    .hero {
+        height: 50vh !important;
+    }
+
+    .small-gallery {
+        width: 100% !important;
+    }
+
+    .small-gallery .owl-stage-outer {
+        width: 50%;
+    }
+
+    .small-triangle-width {
+        width: 50% !important;
+    }
+
+    .clip-path-bg {
+        clip-path: polygon(75% 0%, 100% 0, 100% 100%, 0% 100%) !important;
+        -ms-clip-path: polygon(75% 0%, 100% 0, 100% 100%, 0% 100%) !important;
+        -webkit-clip-path: polygon(75% 0%, 100% 0, 100% 100%, 0% 100%) !important;
+        -moz-clip-path: polygon(75% 0%, 100% 0, 100% 100%, 0% 100%) !important;
+    }
+
+    .clip-path-img {
+        clip-path: polygon(77% 0%, 100% 0, 100% 100%, 2% 100%) !important;
+        -ms-clip-path: polygon(77% 0%, 100% 0, 100% 100%, 2% 100%) !important;
+        -webkit-clip-path: polygon(77% 0%, 100% 0, 100% 100%, 2% 100%) !important;
+        -moz-clip-path: polygon(77% 0%, 100% 0, 100% 100%, 2% 100%) !important;
+    }
 }

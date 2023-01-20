@@ -1,6 +1,7 @@
 :root {
   --accent-primary: #c38862;
   --accent-secondary: #182236;
+  --accent-quinary: #c38862;
   --accent-soft-white: #f7f6f3;
 }
 
@@ -28,6 +29,10 @@ body.nav-open {
 
 .bg-accent {
   background: var(--accent-primary);
+}
+
+.bg-accent-quinary {
+  background: var(--accent-quinary);
 }
 
 .bg-accent-soft-white {

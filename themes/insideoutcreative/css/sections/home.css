@@ -1,4 +1,4 @@
-.owl-item.active .big-gallery-img {
+/* .owl-item.active .big-gallery-img {
     animation: bigGalleryImgZoom 10s ease;
 }
 
@@ -34,7 +34,7 @@
         -webkit-clip-path: polygon(117% 0%, 100% 0, 100% 100%, 42% 100%) !important;
         -moz-clip-path: polygon(117% 0%, 100% 0, 100% 100%, 42% 100%) !important;
     }
-}
+} */
 
 /* start of text columns */
 @media only screen and (max-width:991px) {
