@@ -13,9 +13,9 @@ wp_enqueue_style('img', get_theme_file_uri('/css/elements/img.css'));
 
 wp_enqueue_style('animate-min-css', get_theme_file_uri('/css/animate.min.css'));
 
-if(is_front_page()){
+// if(is_front_page()){
 	wp_enqueue_style('home', get_theme_file_uri('/css/sections/home.css'));
-}
+// }
 if(is_page_template('templates/about.php')){
 	wp_enqueue_style('about-custom', get_theme_file_uri('/css/sections/about.css'));
 	wp_enqueue_style('intro', get_theme_file_uri('/css/sections/intro.css'));

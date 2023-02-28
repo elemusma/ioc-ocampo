@@ -1,3 +1,7 @@
+body:not(.home) .header-background {
+    height: 100%;
+}
+
 ul.menu li {
     padding: 9px 0;
     position: relative;

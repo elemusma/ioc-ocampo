@@ -44,6 +44,11 @@ button.owl-prev {
   }
 }
 
+.owl-stage-outer,
+.owl-stage,
+.owl-item {
+  height: 100%;
+}
 
 .owl-prev span,
 .owl-next span {

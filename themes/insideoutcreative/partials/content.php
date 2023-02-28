@@ -51,12 +51,12 @@ if($layout == 'Content + Image'){
     echo '<div class="row row-content align-items-center justify-content-between">';
 
     if(have_rows('columns')): while(have_rows('columns')): the_row();
-    echo '<div class="col-lg-3 col-md-6 text-center pt-lg-0 pb-lg-0 position-relative" style="padding-top:100px;padding-bottom:100px;">';
+    echo '<div class="col-lg col-md-6 text-center pt-lg-0 pb-lg-0 position-relative" style="padding-top:100px;padding-bottom:100px;">';
     echo '<span class="position-absolute h1 text-accent mb-0 text-columns-big-title" style="opacity: .25;
     top: -50%;
     left: 50%;
     transform: translate(-60%,-50%);
-    font-size: 180px;">' . get_sub_field('big_title') . '</span>';
+    font-size: 125px;">' . get_sub_field('big_title') . '</span>';
 
     echo '<span class="text-black bold">' . get_sub_field('small_title') . '</span>';
 
@@ -197,25 +197,53 @@ if($layout == 'Content + Image'){
         echo '</div>';
         echo '</div>';
 
-        $spaces = get_sub_field('spaces');
+        // $spaces = get_sub_field('spaces');
 
-        if( $spaces ):
+        // if( $spaces ):
+        //     echo '<div class="row">';
+        //     foreach( $spaces as $post ): 
+        //         // Setup this post for WP functions (variable must be named $post).
+        //         setup_postdata($post);
+        //         echo '<div class="col-lg-4 col-md-6 text-center mb-4">';
+        //         echo '<div class="img-hover overflow-h">';
+        //             the_post_thumbnail('full',array('class'=>'w-100','style'=>'height:250px;object-fit:cover;'));
+        //         echo '</div>';
+
+        //         echo '<h3 class="cormorant text-uppercase pt-4">' . get_the_title() . '</h3>';
+        //         echo '<a href="' . get_the_permalink() . '" class="ls-2">LEARN MORE</a>';
+        //         // echo '<hr class="mt-2">';
+        //         echo '</div>';
+        //     endforeach;
+        //     // Reset the global post object so that the rest of the page works correctly.
+        //     wp_reset_postdata(); 
+        //     echo '</div>';
+        // endif;
+
+        if( have_rows('spaces_repeater')):
             echo '<div class="row">';
-            foreach( $spaces as $post ): 
-                // Setup this post for WP functions (variable must be named $post).
-                setup_postdata($post);
+            while(have_rows('spaces_repeater')): the_row();
+            $img = get_sub_field('image');
+            $link = get_sub_field('link');
+                
                 echo '<div class="col-lg-4 col-md-6 text-center mb-4">';
                 echo '<div class="img-hover overflow-h">';
-                    the_post_thumbnail('full',array('class'=>'w-100','style'=>'height:250px;object-fit:cover;'));
+                echo wp_get_attachment_image($img['id'],'full','',[
+                    'class'=>'w-100',
+                    'style'=>'height:250px;object-fit:cover;'
+                ]);
+                    // the_post_thumbnail('full',array('class'=>'w-100','style'=>'height:250px;object-fit:cover;'));
                 echo '</div>';
 
-                echo '<h3 class="cormorant text-uppercase pt-4">' . get_the_title() . '</h3>';
-                echo '<a href="' . get_the_permalink() . '" class="ls-2">LEARN MORE</a>';
+                echo '<h3 class="cormorant text-uppercase pt-4">' . get_sub_field('title') . '</h3>';
+                if ($link){
+                    $link_url = $link['url'];
+                    $link_title = $link['title'];
+                    $link_target = $link['target'] ? $link['target'] : '_self';
+                    echo '<a href="' . $link_url . '" title="' . $link_title . '" target="' . $link_target . '" class="ls-2">LEARN MORE</a>';
+                }
                 // echo '<hr class="mt-2">';
                 echo '</div>';
-            endforeach;
-            // Reset the global post object so that the rest of the page works correctly.
-            wp_reset_postdata(); 
+            endwhile;
             echo '</div>';
         endif;
 
@@ -226,7 +254,10 @@ if($layout == 'Content + Image'){
     if(have_rows('testimonials')): while(have_rows('testimonials')): the_row();
     echo '<section class="position-relative" style="padding:150px 0;">';
 
-    echo wp_get_attachment_image(177,'full','',['class'=>'position-absolute h-100 z-1','style'=>'top:0;left:50%;transform:translate(-50%,-50%);width:150px;object-fit:contain;']);
+    echo wp_get_attachment_image(177,'full','',[
+        'class'=>'position-absolute h-100 z-1',
+        'style'=>'top:0;left:50%;transform:translate(-50%,-50%);width:150px;object-fit:contain;pointer-events:none;'
+    ]);
     echo wp_get_attachment_image(173,'full','',['class'=>'w-100 h-100 position-absolute','style'=>'top:0;left:0;']);
 
     echo '<div class="container">';
@@ -287,6 +318,63 @@ if($layout == 'Content + Image'){
         echo '</div>';
         echo '</div>';
         echo '</section>';
+    endwhile; endif;
+} elseif($layout == 'Content + Image Fancy'){
+    if(have_rows('content_image_fancy_group')): while(have_rows('content_image_fancy_group')): the_row();
+    echo '<section class="position-relative ' . get_sub_field('classes') . '" style="padding:250px 0 100px;' . get_sub_field('style') . '" id="' . get_sub_field('id') . '">';
+
+        $bgImg = get_sub_field('background_image');
+
+        if($bgImg){
+            echo wp_get_attachment_image($bgImg['id'],'full','',[
+                'class'=>'w-100 h-100 position-absolute bg-img',
+                'style'=>'top:0;left:0;object-fit:cover;pointer-events:none;'
+            ]);
+        }
+
+        echo '<div class="container">';
+            echo '<div class="row ' . get_sub_field('row_classes') . '" style="' . get_sub_field('row_style') . '">';
+
+            echo '<div class="col-lg-5 img--main">';
+echo '<div class="h-100">';
+
+$gallery = get_sub_field('gallery');
+if( $gallery ): 
+    echo '<div class="gallery-content-carousel owl-carousel owl-theme arrows-middle h-100">';
+    foreach( $gallery as $image ):
+        echo '<div class="overflow-h h-100">';
+        // echo '<div class="position-relative">';
+        echo '<a href="' . wp_get_attachment_image_url($image['id'], 'full') . '" class="h-100" data-lightbox="image-set">';
+        echo wp_get_attachment_image($image['id'], 'full','',[
+            'class'=>'w-100 h-100 img-portfolio',
+            'style'=>'object-fit:cover;'
+        ] );
+        echo '</a>';
+        // echo '</div>';
+        echo '</div>';
+    endforeach; 
+    echo '</div>';
+endif;
+
+echo '</div>';
+echo '</div>';
+echo '<div class="col-lg-6 pt-lg-0 pt-5 sm-text-center about"> ';
+echo '<div class="about-first-half">';
+echo '<div class="about-before"></div>';
+echo '<div class="about-middle"></div>';
+echo '</div>';
+echo '<div class="about-after"></div>';
+echo '<div class="about-details pt-5 pl-4 pr-4">';
+
+the_sub_field('content');
+
+echo '</div>';
+
+            echo '</div>';
+        echo '</div>';
+
+    echo '</section>';
+
     endwhile; endif;
 }
 
